@@ -1,5 +1,7 @@
 ## README
 
+STATUS: Pre-alpha, in design and prototyping phase.
+
 #### About
 
 `tape.clj-template`
