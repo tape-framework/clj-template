@@ -10,7 +10,7 @@
    [tape.tools.timeouts.controller]
    [tape.tools.intervals.controller]
    [tape.toasts.controller]
-   [{{namespace}}.app.layouts.view :as layouts.v]
+   [{{namespace}}.app.layouts.app :as app]
    [{{namespace}}.app.hello.controller :as hello.c]))
 
 (mvc/require-modules "src/{{nested-dirs}}/app")
@@ -19,7 +19,7 @@
 
 (defmethod ig/init-key ::main [_ _]
   (rf/dispatch-sync [::router/navigate [::hello.c/index]])
-  (dom/render [layouts.v/app] (goog.dom/getElement "app")))
+  (dom/render [app/app] (goog.dom/getElement "app")))
 
 ;;; System
 
@@ -28,7 +28,8 @@
 (def config
   (merge (module/read-config "{{nested-dirs}}/config.edn")
          (:modules modules-discovery)
-         {:tape.profile/base {::main (ig/ref :tape.mvc/main)
-                              ::router/routes (apply merge (:routes modules-discovery))
+         {:tape.profile/base {::router/routes (:routes modules-discovery)
                               :tape/router    {:routes  (ig/ref ::router/routes)
-                                               :options {:conflicts nil}}}}))
+                                               :options {:conflicts nil}}
+                              :tape.mvc/main  {:router :tape/router}
+                              ::main          (ig/ref :tape.mvc/main)}}))

@@ -1,4 +1,4 @@
-(ns {{namespace}}.app.layouts.view
+(ns {{namespace}}.app.layouts.app
   (:require [reagent.core :as r]
             [re-frame.core :as rf]
             [tape.mvc.view :as v]

@@ -19,6 +19,6 @@
              ["resources/public/css/style.css" (render "resources/public/css/style.css")]
 
              ["src/{{nested-dirs}}/core.cljs" (render "src/name/core.cljs" data)]
-             ["src/{{nested-dirs}}/app/layouts/view.cljs" (render "src/name/app/layouts/view.cljs" data)]
+             ["src/{{nested-dirs}}/app/layouts/app.cljs" (render "src/name/app/layouts/app.cljs" data)]
              ["src/{{nested-dirs}}/app/hello/controller.cljs" (render "src/name/app/hello/controller.cljs" data)]
              ["src/{{nested-dirs}}/app/hello/view.cljs" (render "src/name/app/hello/view.cljs" data)])))
