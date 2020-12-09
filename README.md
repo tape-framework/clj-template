@@ -13,7 +13,7 @@ Tape Framework app template.
 You must be familiar with [clj-new](https://github.com/seancorfield/clj-new) and have it installed.
 
 ```bash
-> clj -X:new clj-new/create :template tape :name myname/myapp
+> clj -X:new clj-new/create :template '"/path/ro/tape/clj-template::tape"' :name myname/myapp
 ```
 
 #### License
