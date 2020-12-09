@@ -1,5 +1,4 @@
 (ns {{namespace}}.app.hello.controller
-  (:refer-clojure :rename {update clojure-update})
   (:require [reitit.coercion.spec :as rcs]
             [tape.mvc.controller :as c :include-macros true]))
 
