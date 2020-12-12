@@ -27,7 +27,7 @@
 (def config
   (merge (module/read-config "{{nested-dirs}}/config.edn")
          (:modules modules-discovery)
-         {:tape.profile/base {::router/routes (:routes modules-discovery)
+         {:tape.profile/base {::router/routes (into [""] (:routes modules-discovery))
                               :tape/router    {:routes  (ig/ref ::router/routes)
                                                :options {:conflicts nil}}
                               :tape.mvc/main  {:router :tape/router}
