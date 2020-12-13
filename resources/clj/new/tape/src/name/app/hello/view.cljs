@@ -6,7 +6,7 @@
 ;;; Views
 
 (defn ^::v/view index []
-  (let [say @(rf/subscribe [::hello.c/say])]
+  (let [say @(v/subscribe [hello.c/say])]
     [:p.hello-tape say]))
 
 ;;; Module
