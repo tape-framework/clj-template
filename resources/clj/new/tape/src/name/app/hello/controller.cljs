@@ -4,7 +4,7 @@
 
 ;;; Routes
 
-(def routes
+(def ^::c/routes routes
   ["" {:coercion rcs/coercion}
    ["/say" ::index]])
 

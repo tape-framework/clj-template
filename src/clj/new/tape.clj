@@ -13,7 +13,7 @@
              ["dev/src/cljs/user.cljs" (render "dev/src/cljs/user.cljs" data)]
              ["dev/src/{{nested-dirs}}/dev.cljs" (render "dev/src/name/dev.cljs" data)]
 
-             ["resources/{{nested-dirs}}/config.edn" (render "resources/name/config.edn")]
+             ["resources/{{nested-dirs}}/config.edn" (render "resources/name/config.edn" data)]
              ["resources/public/index.html" (render "resources/public/index.html")]
              ["resources/public/favicon.ico" (render "resources/public/favicon.ico")]
              ["resources/public/css/style.css" (render "resources/public/css/style.css")]

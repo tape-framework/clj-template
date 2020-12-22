@@ -10,8 +10,7 @@
    [tape.tools.timeouts.controller]
    [tape.tools.intervals.controller]
    [tape.toasts.controller]
-   [{{namespace}}.app.layouts.app :as app]
-   [{{namespace}}.app.hello.controller :as hello.c]))
+   [{{namespace}}.app.layouts.app :as app]))
 
 (mvc/require-modules "src/{{nested-dirs}}/app")
 
@@ -22,13 +21,6 @@
 
 ;;; System
 
-(def ^:private modules-discovery (mvc/modules-discovery "src/{{nested-dirs}}/app"))
-
 (def config
-  (merge (module/read-config "{{nested-dirs}}/config.edn")
-         (:modules modules-discovery)
-         {:tape.profile/base {::router/routes (into [""] (:routes modules-discovery))
-                              :tape/router    {:routes  (ig/ref ::router/routes)
-                                               :options {:conflicts nil}}
-                              :tape.mvc/main  {:router :tape/router}
-                              ::main          (ig/ref :tape.mvc/main)}}))
+  (merge (mvc/modules-map "src/{{nested-dirs}}/app")
+         (module/read-config "{{nested-dirs}}/config.edn")))
