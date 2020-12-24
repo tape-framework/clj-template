@@ -5,10 +5,12 @@
 
 ;;; Views
 
-(defn ^::v/view index []
+(defn index
+  {::v/reg ::v/view}
+  []
   (let [say @(v/subscribe [hello.c/say])]
     [:p.hello-tape say]))
 
 ;;; Module
 
-(v/defmodule {{namespace}}.app.hello.controller)
+(v/defmodule)

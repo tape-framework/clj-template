@@ -4,19 +4,22 @@
 
 ;;; Routes
 
-(def ^::c/routes routes
+(def ^{::c/reg ::c/routes} routes
   ["" {:coercion rcs/coercion}
    ["/say" ::index]])
 
 ;;; Handlers
 
-(defn ^::c/event-db index [_db [_ev-id _params]]
+(defn index
+  {::c/reg ::c/event-db}
+  [_db [_ev-id _params]]
   {::say "Hello Tape Framework!"})
 
 ;;; Subs
 
-(defn ^::c/sub say [db _query]
-  (::say db))
+(defn say
+  {::c/reg ::c/sub}
+  [db _query] (::say db))
 
 ;;; Module
 
