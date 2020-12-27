@@ -1,7 +1,6 @@
 {:paths ["src" "resources"]
  :deps {org.webjars.npm/bulma {}
         tape/mvc {:local/root "../mvc"}
-        tape/current {:local/root "../current"}
         tape/router {:local/root "../router"}
         tape/tools {:local/root "../tools"}
         tape/toasts {:local/root "../toasts"}}

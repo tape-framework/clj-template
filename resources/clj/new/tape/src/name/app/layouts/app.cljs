@@ -2,13 +2,13 @@
   (:require [reagent.core :as r]
             [re-frame.core :as rf]
             [tape.mvc.view :as v]
-            [tape.current :as current]
+            [tape.tools.current.controller :as current.c]
             [tape.router :as router]
             [tape.toasts.view :as toasts.v]))
 
 
 (defn app []
-  (let [current-view-fn @(rf/subscribe [::current/view-fn])]
+  (let [current-view-fn @(rf/subscribe [::current.c/view-fn])]
     [:<>
      [:section.section
       [:div.container
