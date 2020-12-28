@@ -1,16 +1,16 @@
 (ns {{namespace}}.app.hello.view
-  (:require [tape.mvc.view :as v :include-macros true]
+  (:require [tape.mvc :as mvc :include-macros true]
             [tape.tools :as tools :include-macros true]
             [{{namespace}}.app.hello.controller :as hello.c]))
 
 ;;; Views
 
 (defn index
-  {::v/reg ::v/view}
+  {::mvc/reg ::mvc/view}
   []
   (let [say @(tools/subscribe [hello.c/say])]
     [:p.hello-tape say]))
 
 ;;; Module
 
-(v/defmodule)
+(mvc/defm ::module)
