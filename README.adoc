@@ -1,24 +1,24 @@
-## README
-
-STATUS: Pre-alpha, in design and prototyping phase.
-
-#### About
+== README
 
 `tape.clj-template`
 
+=== About
+
 Tape Framework app template.
 
-#### Usage
+=== Usage
 
-You must be familiar with [clj-new](https://github.com/seancorfield/clj-new) and have it installed.
+You must be familiar with https://github.com/seancorfield/clj-new[clj-new] and
+have it installed.
 
-```bash
+[source,bash]
+----
 CLJ_CONFIG=./versions/ clj -A:versions \
   -Sdeps '{:deps {tape/clj-template {:local/root "./clj-template"}}}' \
   -X:new clj-new/create :template tape :name myname/myapp
-```
+----
 
-#### License
+=== License
 
 Copyright © 2020 clyfe
 
