@@ -1,4 +1,5 @@
-/target
+/.idea
+/clj-template.iml
 /classes
 /checkouts
 *.jar
@@ -6,4 +7,9 @@
 /.cpcache
 /.nrepl-history
 /.nrepl-port
-clj-template.iml
+/.calva
+/.clj-kondo
+/.lsp
+/target
+/out
+/cljs-test-runner-out
